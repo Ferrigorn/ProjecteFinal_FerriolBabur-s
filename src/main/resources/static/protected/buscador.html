@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- @author Ferriol Baburés -->
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Buscador de Llibres</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/buscador.css" />
+    </head>
+    <body>
+        <header>
+            <img
+              id="logoHeader"
+              src="../Imatges/Logo_avis.png"
+              alt="logo avis llegint"
+            />
+            <h1>Biblioteca Molongui</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inici</a></li>
+                    <li><a href="/protected/perfil.html">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <aside id="sidebarLeft">
+                <img
+                  id="imgSidebarLeft"
+                  src="../Imatges/estanteriaEsquerre (1).jpg"
+                  alt="estanteria amb llibres"
+                />
+            </aside>
+            <div class="contingut">
+                <h2>Benvigut@ al buscador de llibres</h2>
+                <!-- buscador per autor -->
+                <div id="buscadorAutorDiv">
+                    <h2>Busca per Autor</h2>
+                    <input
+                      type="text"
+                      id="buscadorAutor"
+                      name="buscadorAutor"
+                      placeholder="Introdueix l'autor@"
+                    />
+                    <button type="button" id="botoBuscarAutor">Buscar</button>
+                </div>
+                <!-- buscador per titol -->
+                <div id="buscadorTitolDiv">
+                    <h2>Busca per Títol</h2>
+                    <input
+                      type="text"
+                      id="buscadorTitol"
+                      name="buscadorTitol"
+                      placeholder="Introdueix el titol"
+                    />
+                    <button type="button" id="botoBuscarTitol">Buscar</button>
+                </div>
+                <!-- buscador per genere -->
+                <div id="buscadorGenereDiv">
+                    <h2>Busca per Gènere</h2>
+                    <select id="buscadorGenere">
+                        <option value="">Seleccionar...</option>
+                    </select>
+                    <button type="submit" id="botoBuscarGenere" >Buscar</button>
+                </div>
+                
+                <h2>Resultats de la Cerca</h2>
+                <div id="llistaLlibres"></div>
+            </div>
+            <aside id="sidebarRight">
+                <img
+                  id="imgSidebarRight"
+                  src="../Imatges/estanteriaDreta (1).jpg"
+                  alt="estanteria amb llibres"
+                />
+            </aside>  
+        </main>
+      <script src="js/buscador.js"></script>  
+    </body>
+</html>

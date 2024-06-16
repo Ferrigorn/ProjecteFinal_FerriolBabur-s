@@ -1,0 +1,328 @@
+/* @author Ferriol Baburés */ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: rgba(245, 222, 179, 0.358);
+}
+
+/*Header*/
+
+header {
+  width: 100vw;
+  height: 15vh;
+  background-color: antiquewhite;
+  border-bottom-color: black;
+  display: flex;
+  background-image: url("../Imatges/Header.jpg");
+  background-repeat:repeat-x;
+  
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+#logoHeader {
+  width: 100px;
+  height: 14vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+}
+#centralHeader {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 14vh;
+  gap: 10px;
+  align-items: center;
+}
+h1 {
+  font-family: "MedievalSharp", cursive;
+  color: white;
+  text-shadow: 1px 1px 2px white;
+}
+h2 {
+  font-family: "MedievalSharp", cursive;
+  
+  text-shadow: 1px 1px 2px white;
+}
+li {
+  list-style: none;
+}
+a {
+  font-family: "MedievalSharp", cursive;
+  color: white;
+  text-shadow: 1px 1px 2px white;
+  text-decoration: none;
+  
+  font-size: x-large;
+}
+a:hover {
+  font-size: xx-large;
+}
+
+#buscadorGeneral{
+   background-color: rgba(165, 212, 230, 0.7); 
+}
+#buscadorGeneral::placeholder{
+    color:black;
+}
+.botoBuscar {
+  align-self: center;
+
+  width: 200px;
+  height: 30px;
+  border: 0 solid;
+  border-radius: 5px;
+  background-color: rgba(135, 207, 235, 0.8);
+  -webkit-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+}
+.botoBuscar:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
+  text-shadow: 1px 1px 2px #427388;
+}
+
+/*Main*/
+
+main {
+  width: 100vw;
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contingut {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sidebarLeft,
+#sidebarRight {
+  background-color: #f4f4f4;
+  width: 15vw;
+  min-height: 100vh;
+  -webkit-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#sidebarLeft {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#sidebarRight {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#imgSidebarRight,
+#imgSidebarLeft {
+  max-width: 100%;
+  height: 100vh;
+  border-radius: 5px;
+  object-fit: fill;
+}
+
+/*Presentacio dels llibres*/
+
+.llibre-item {
+  perspective: 1000px;
+  margin: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.card {
+  position: relative;
+
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding-bottom: 18px;
+}
+
+.card-front {
+  background-image: url("../Imatges/pergami.jpg");
+}
+
+.card-back {
+  background-image: url("../Imatges/pergami.jpg");
+  transform: rotateY(180deg);
+}
+
+.cardImg {
+  width: 90%;
+  height: 70%;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgba(135, 207, 235, 0.667);
+  -webkit-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+}
+
+button:active {
+  transform: scale(0.95);
+} 
+button:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
+  text-shadow: 1px 1px 2px #427388;
+}
+
+#usuarioForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  height: 65vh;
+  background-image: url("../Imatges/pergami.jpg");
+  border-radius: 10px;
+  -webkit-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  padding: 5px;
+}
+#titolForm {
+  align-self: center;
+}
+#formUser {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 8px;
+  width: 50vw;
+  height: 100%;
+}
+label {
+  align-self: center;
+}
+input {
+  height: 30px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: rgba(165, 212, 230, 0.429);
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+#btnForm {
+  align-self: center;
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  border: 0 solid;
+  border-radius: 5px;
+  background-color: rgba(135, 207, 235, 0.667);
+  -webkit-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.75);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+}
+#btnForm:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
+  text-shadow: 1px 1px 2px #427388;
+}
+
+/* Footer */
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0;
+}
